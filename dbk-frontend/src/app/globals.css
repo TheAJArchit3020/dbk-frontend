@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --bg-dark: #f2efee; /* bg-dark */
+  --bg: #e9e4e2; /* bg */
+  --border: #ded6d4; /* border */
+
+  /* Actions */
+  --primary: #b73334;
+  --secondary: #2ac3c9;
+  --tertiary: #fc949c;
+
+  /* Text */
+  --text: #3b3c3d;
+  --text-muted: #555758;
+}
+
+@theme inline {
+  --color-bg-light: var(--bg-dark);
+  --color-bg-dark: var(--bg);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+
+  --text-h1: clamp(1.25rem, 0.9rem + 3.5vw, 2.5rem);
+  --leading-h1: 1.2;
+
+  /* h2: mobile ≤ 16px (1rem), desktop ≤ 40px (2.5rem) */
+  --text-h2: clamp(1rem, 0.8rem + 2.2vw, 1.5rem);
+  --leading-h2: 1.3;
+
+  /* normal/body: mobile ≤ 13px (0.8125rem), desktop ≤ 32px (2rem) */
+  --text-normal: clamp(0.8125rem, 0.75rem + 1.2vw, 1.2rem);
+  --leading-normal: 1.6;
+
+  --font-serif: var(--font-crimson-pro), ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-pacifico: var(--font-pacifico), ui-serif;
+}
+
+/* App-wide defaults */
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-optical-sizing: auto; /* use opsz axis when available */
+  text-rendering: optimizeLegibility;
+}
+:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--color-primary) 60%, white);
+  outline-offset: 2px;
+}
